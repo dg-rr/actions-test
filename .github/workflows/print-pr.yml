@@ -18,4 +18,5 @@ jobs:
       - name: Print pull request number
         run: |
           echo ${{ github.event }}
-          echo ${{ github.event.number }}
+          echo ${{ github.event.pull_request }}
+          echo ${{ github.event.pull_request.number }}

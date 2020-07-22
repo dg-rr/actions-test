@@ -17,4 +17,5 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Print pull request number
         run: |
+          echo ${{ github.event }}
           echo ${{ github.event.number }}

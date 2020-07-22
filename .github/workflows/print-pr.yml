@@ -10,11 +10,8 @@ jobs:
   print-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
       - name: Print pull request number
         run: |
-          echo ${{ github.event }}
-          echo ${{ github.event.pull_request }}
+          echo ${{ github.event.action }}
+          echo ${{ github.event.pull_request.merged }}
           echo ${{ github.event.pull_request.number }}

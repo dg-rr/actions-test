@@ -4,19 +4,14 @@ name: Pull Request Number
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: 
-      - master
+on: pull_request
+
 jobs:
   print-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
       - name: Print pull request number
         run: |
-          echo ${{ github.event }}
-          echo ${{ github.event.pull_request }}
+          echo ${{ github.event.action }}
+          echo ${{ github.event.pull_request.merged }}
           echo ${{ github.event.pull_request.number }}
